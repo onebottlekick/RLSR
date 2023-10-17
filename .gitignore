@@ -3,3 +3,4 @@ __pycache__/
 *.pt
 *.pth
 dataset/
+.DS_Store
