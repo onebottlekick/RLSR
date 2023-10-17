@@ -12,22 +12,22 @@ class State:
 
         dev = torch.device(device)
         self.HAN = HAN().to(device)
-        model_path = "models/han/HAN_BIX2.pt"
+        model_path = "models/model_weights/HAN_BIX2.pt"
         self.HAN.load_state_dict(torch.load(model_path, dev))
         self.HAN.eval()
 
         self.HAT = HAT().to(device)
-        model_path = 'models/hat/HAT_SRx2_ImageNet-pretrain.pth'
+        model_path = 'models/model_weights/HAT_SRx2_ImageNet-pretrain.pth'
         self.HAT.load_state_dict(torch.load(model_path, dev)['params_ema'])
         self.HAT.eval()
 
         self.SwinIR = SwinIR().to(device)
-        model_path = "models/swinir/001_classicalSR_DF2K_s64w8_SwinIR-M_x2.pth"
+        model_path = "models/model_weights/001_classicalSR_DF2K_s64w8_SwinIR-M_x2.pth"
         self.SwinIR.load_state_dict(torch.load(model_path, dev)['params'])
         self.SwinIR.eval()
 
         self.VDSR = SwinIR().to(device)
-        model_path = "models/swinir/001_classicalSR_DF2K_s64w8_SwinIR-M_x2.pth"
+        model_path = "models/model_weights/001_classicalSR_DF2K_s64w8_SwinIR-M_x2.pth"
         self.VDSR.load_state_dict(torch.load(model_path, dev)['params'])
         self.VDSR.eval()
 
